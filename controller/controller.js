@@ -9,7 +9,7 @@ class controller {
         static async controller1(req,res){
             try{
                 res.send("my second api")
-            }catch(adi){
+            }catch(error){
     
 
 }
