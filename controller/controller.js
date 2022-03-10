@@ -1,8 +1,12 @@
+const pool=require("../db/pg");
+
 class controller {
     static async controller(req,res){
         try{
-            var name = req.query.name;
-            res.send("name of software :"+name)
+            pool.query("select * from  users",(err,results)=>{
+                if (err) throw err;
+                res.send(results.rows);
+        });
         }catch(error){
 
         }

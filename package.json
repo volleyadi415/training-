@@ -2,13 +2,14 @@
   "name": "praticenode",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "nodemon app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+"start": "nodemon app.js"
   },
   "author": "aditya",
   "license": "ISC",
   "dependencies": {
+    "nodemon": "^2.0.15",
     "pg": "^8.7.3"
   }
 }

@@ -1,16 +1,13 @@
-const pgtools = require("pgtools");
-const config = {
-  user: "postgres",
-  host: "localhost",
-  password: "2580",
-  port: 5432
-};
+const { Pool } = require('pg')
+const pool = new Pool({
+    user: 'postgres',
+    password: '2580',
+    database: 'test',
+    host: 'localhost',
+    port: '5000',
+})
 
-pgtools.createdb(config, "controller.js", function(err, res) {
-  if (err) {
-    console.error(err);
-    process.exit(-1);
-  }
-  console.log(res);
-});
-module.exports=pgtools,config;
+pool.connect(()=>{
+    console.log(" connection established")
+})
+module.exports=pool;
